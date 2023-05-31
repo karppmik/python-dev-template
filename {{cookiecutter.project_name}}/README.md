@@ -59,6 +59,22 @@ __Remote-Containers: Rebuild and Reopen in Container__.
 
 During first time, it takes a while to build the development container.
 
+### Virtual Environment
+
+Activate virtual environment:
+
+```
+poetry shell
+```
+
+### Pre-commit
+
+Install pre-commit hooks, so they will be run before commit.
+
+```
+pre-commit install
+```
+
 ### Git Repository
 
 If you have an existing __empty__ Git repository, initialize Git within the development container and push the Cookiecutter stubs.
@@ -70,14 +86,6 @@ git add -A
 git commit -m "Cookiecutter stubs"
 git branch -M main
 git push origin -u main
-```
-
-### Virtual Environment
-
-Activate virtual environment:
-
-```
-poetry shell
 ```
 
 This command also creates the .venv folder inside the project folder on the first time. In case you run into problems, delete the .venv folder and run the command again.
