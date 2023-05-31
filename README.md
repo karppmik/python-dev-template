@@ -13,7 +13,7 @@ Main features:
 
 Install Cookiecutter
 
-```python3 -m pip install cookiecutter````
+```python3 -m pip install cookiecutter```
 
 Initialize the template and fill the form:
 
