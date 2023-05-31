@@ -7,17 +7,19 @@
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
 3. [Development Environment Setup](#development-environment-setup)
-4. [Development Container](#development-container)
+   - [Run Container](#run-container)
+   - [Initialize Git Repository](#initialize-git-repository)
+5. [Development Container](#development-container)
     - [Docker](#docker)
     - [DevContainer](#devcontainer)
     - [Post-Create Script](#post-create-script)
-5. [Pre-commit Hooks](#pre-commit-hooks)
-6. [Usage](#usage)
+6. [Pre-commit Hooks](#pre-commit-hooks)
+7. [Usage](#usage)
     - [Git Workflow](#git-workflow)
     - [Poetry](#poetry)
-7. [Testing](#testing)
-8. [Authors](#authors)
-9. [License](#license)
+8. [Testing](#testing)
+9. [Authors](#authors)
+10. [License](#license)
 
 ## Introduction
 
@@ -41,6 +43,8 @@ https://marketplace.visualstudio.com/items?itemName=ms-vscode-remote.remote-cont
 
 ## Development Environment Setup
 
+### Run Container
+
 After Docker is installed and running, navigate to the repository and open it in VSCode:
 
 ```
@@ -54,11 +58,19 @@ __Remote-Containers: Rebuild and Reopen in Container__.
 
 During first time, it takes a while to build the development container.
 
-Activate virtual environment:
+### Initialize Git Repository
+
+If you have an existing __empty__ Git repository, initialize Git within the development container and push the Cookiecutter stubs.
 
 ```
-poetry shell
+git init
+git remote add origin REPOURI
+git branch -M main
+git add -A
+git commit -m "Cookiecutter stubs"
+git push origin -u main
 ```
+
 
 ## Development Container
 
