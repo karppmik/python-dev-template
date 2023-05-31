@@ -1,8 +1,8 @@
-**Python Development Template**
+*Python Development Template*
 
 Development template based on Cookiecutter for creating Python applications.
 
-Main features:
+**Main features**
 
 - VSCode .devcontainer
 - Poetry for dependency managament
