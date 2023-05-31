@@ -8,7 +8,8 @@
    - [Installation](#installation)
 3. [Development Environment Setup](#development-environment-setup)
    - [Run Container](#run-container)
-   - [Initialize Git Repository](#initialize-git-repository)
+   - [Git Repository](#git-repository)
+   - [Virtual Environment](#virtual-environment)
 5. [Development Container](#development-container)
     - [Docker](#docker)
     - [DevContainer](#devcontainer)
@@ -58,7 +59,7 @@ __Remote-Containers: Rebuild and Reopen in Container__.
 
 During first time, it takes a while to build the development container.
 
-### Initialize Git Repository
+### Git Repository
 
 If you have an existing __empty__ Git repository, initialize Git within the development container and push the Cookiecutter stubs.
 
@@ -71,6 +72,15 @@ git branch -M main
 git push origin -u main
 ```
 
+### Virtual Environment
+
+Activate virtual environment:
+
+```
+poetry shell
+```
+
+This command also creates the .venv folder inside the project folder on the first time. In case you run into problems, delete the .venv folder and run the command again.
 
 ## Development Container
 
