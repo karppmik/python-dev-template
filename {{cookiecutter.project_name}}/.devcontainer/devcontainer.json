@@ -1,0 +1,21 @@
+{
+    "name": "Python 3",
+    "build": {
+        "dockerfile": "Dockerfile"
+    },
+    "extensions": [
+        "ms-python.python",
+        "ms-python.vscode-pylance",
+        "ms-toolsai.jupyter",
+        "ms-python.flake8",
+        "ms-python.pylint"
+    ],
+    "settings": {
+        "python.linting.pylintArgs": [
+            "--generated-members=numpy.* ,torch.*"
+        ],
+        "python.analysis.autoSearchPaths": true
+    },
+    "appPort": 8080,
+    "postCreateCommand": "sh .devcontainer/post-create.sh"
+}

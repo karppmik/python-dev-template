@@ -1,0 +1,8 @@
+{
+    "full_name": "Firstname Lastname",
+    "email": "name@domain.com",
+    "project_name": "project-name",
+    "package_name": "{{cookiecutter.project_name.replace('-', '_')}}",
+    "description": "",
+    "version": "0.1.0"
+}
