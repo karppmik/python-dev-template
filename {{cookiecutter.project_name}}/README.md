@@ -65,9 +65,9 @@ If you have an existing __empty__ Git repository, initialize Git within the deve
 ```
 git init
 git remote add origin REPOURI
-git branch -M main
 git add -A
 git commit -m "Cookiecutter stubs"
+git branch -M main
 git push origin -u main
 ```
 
