@@ -11,7 +11,7 @@ Main features:
 
 **Usage**
 
-Install Cookiecutter
+Install Cookiecutter:
 
 ```python3 -m pip install cookiecutter```
 
