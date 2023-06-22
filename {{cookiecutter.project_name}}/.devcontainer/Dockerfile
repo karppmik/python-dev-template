@@ -13,4 +13,4 @@ RUN pip install poetry && \
     poetry config virtualenvs.in-project true 
 
 # This plugin helps manage versioning of your Python projects
-RUN poetry plugin add poetry-version
+RUN poetry self add poetry-bumpversion
