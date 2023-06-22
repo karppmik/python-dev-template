@@ -67,28 +67,29 @@ Activate virtual environment:
 poetry shell
 ```
 
-### Pre-commit
+This command also creates the .venv folder inside the project folder on the first time. In case you run into problems, delete the .venv folder and run the command again.
 
-Install pre-commit hooks, so they will be run before commit.
+### Git Repository and Pre-commit Hooks
 
-```
-pre-commit install
-```
-
-### Git Repository
-
-If you have an existing __empty__ Git repository, initialize Git within the development container and push the Cookiecutter stubs.
+If you have an existing __empty__ Git repository, initialize Git within the development container. Then install and initialize pre-commit hooks. Finally push the Cookiecutter stubs.
 
 ```
 git init
 git remote add origin REPOURI
 git add -A
+```
+
+```
+pre-commit install
+pre-commit run --all-files
+```
+
+```
+git add -A
 git commit -m "Cookiecutter stubs"
 git branch -M main
 git push origin -u main
 ```
-
-This command also creates the .venv folder inside the project folder on the first time. In case you run into problems, delete the .venv folder and run the command again.
 
 ## Development Container
 
