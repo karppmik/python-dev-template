@@ -3,18 +3,18 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
-    "extensions": [
-        "ms-python.python",
-        "ms-python.vscode-pylance",
-        "ms-toolsai.jupyter",
-        "ms-python.flake8",
-        "ms-python.pylint"
-    ],
-    "settings": {
-        "python.linting.pylintArgs": [
-            "--generated-members=numpy.* ,torch.*"
+    "customizations": {
+        "extensions": [
+            "ms-python.python",
+            "ms-python.vscode-pylance",
+            "ms-toolsai.jupyter",
+            "ms-python.flake8",
+            "ms-python.pylint"
         ],
-        "python.analysis.autoSearchPaths": true
+        "settings": {
+            "python.analysis.autoSearchPaths": true,
+            "python.notebook.notebookFileRoot": "${workspaceFolder}"
+        }
     },
     "appPort": 8080,
     "postCreateCommand": "sh .devcontainer/post-create.sh"
