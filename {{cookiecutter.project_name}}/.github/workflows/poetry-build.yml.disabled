@@ -1,0 +1,44 @@
+name: Build and Publish Poetry Package
+
+on:
+  push:
+    branches:
+      - main
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  build-package:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Set up Python
+        uses: actions/setup-python@v4
+        with:
+          python-version: '3.11'
+
+      - name: Install Poetry
+        run: |
+          curl -sSL https://install.python-poetry.org | python3 -
+          echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+
+      - name: Run Tox Tests
+        run: |
+          poetry run tox
+
+      - name: Install Dependencies and Build Wheel Package
+        run: |
+          poetry install --no-root
+          poetry build --format wheel
+          
+
+      # Optionally Publish to PyPI (Commented by Default)
+      # - name: Publish to PyPI
+      #   uses: pypa/gh-action-pypi-publish@v1.8.1
+      #   with:
+      #     username: {% raw %}${{ secrets.PYPI_USERNAME }}{% endraw %}
+      #     password: {% raw %}${{ secrets.PYPI_API_TOKEN }}{% endraw %}
