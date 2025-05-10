@@ -13,7 +13,7 @@ RUN pip install --no-cache-dir --upgrade pip && \
 
 COPY pyproject.toml ./ 
 
-RUN hatch env create && hatch env run pip install -e .
+RUN hatch env create && hatch env run pip install -e . && hatch env run pip install -r requirements.txt
 
 COPY src/{{cookiecutter.package_name}} /{{cookiecutter.package_name}}
 
