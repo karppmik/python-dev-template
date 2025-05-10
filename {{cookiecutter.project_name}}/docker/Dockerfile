@@ -25,7 +25,7 @@ COPY src/{{cookiecutter.package_name}} /src/{{cookiecutter.package_name}}
 
 WORKDIR /src
 
-RUN uv pip install . --system
+RUN uv pip install --link-mode=copy --editable ".[dev]"
 
 ENV PYTHONPATH="/src"
 
