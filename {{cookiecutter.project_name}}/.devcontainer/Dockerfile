@@ -5,10 +5,8 @@ RUN apt-get update -y && \
     apt-get -y install curl git build-essential && \
     pip install --upgrade pip
 
-RUN pip install poetry && \
-    poetry config virtualenvs.in-project true 
-
-RUN poetry self add poetry-bumpversion
+RUN pip install uv && \
+    uv config virtualenvs.in-project true
 
 ENV PYTHONPATH="/workspaces/{{cookiecutter.package_name}}/src"
 
