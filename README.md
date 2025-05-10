@@ -16,10 +16,10 @@ A Cookiecutter-based template for Python application development. It has been de
 
 ## Usage
 
-Install Cookiecutter, UV, and Hatch:
+Install Cookiecutter:
 
 ```bash
-python3 -m pip install cookiecutter uv hatch
+brew install cookiecutter
 ```
 
 Generate a New Project:
