@@ -13,7 +13,6 @@ A Cookiecutter-based template for Python application development. It has been de
 - __Continuous Integration (CI) Workflows__: CI configurations with GitHub Actions for:
   - **Docker Build and Push**: Automates the building and pushing of Docker images to a container registry.
   - **Package Build**: Automates the building and publishing of Python wheels to a package index.
-  - **Pre-commit Checks**: Ensures code quality by running pre-commit hooks on pull requests.
 
 ## Usage
 
