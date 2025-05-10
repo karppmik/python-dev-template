@@ -16,10 +16,12 @@ A Cookiecutter-based template for Python application development. It has been de
 
 ## Usage
 
-Install Cookiecutter:
+Install Cookiecutter from Source:
 
 ```bash
-brew install cookiecutter
+git clone https://github.com/cookiecutter/cookiecutter.git
+cd cookiecutter
+python setup.py install
 ```
 
 Generate a New Project:
