@@ -10,7 +10,10 @@ A Cookiecutter-based template for Python application development. It has been de
 - __UV__: Virtual environment management.
 - __Pre-commit Hooks with Ruff__: Automated checks to enforce code quality standards.
 - __Tox for Testing__: Automated environment creation and test execution across multiple configurations.
-- __Continuous Integration (CI) Workflows__: CI configurations with Github Actions for building and pushing Docker images and building, and publishing Python wheels.
+- __Continuous Integration (CI) Workflows__: CI configurations with GitHub Actions for:
+  - **Docker Build and Push**: Automates the building and pushing of Docker images to a container registry.
+  - **Package Build**: Automates the building and publishing of Python wheels to a package index.
+  - **Pre-commit Checks**: Ensures code quality by running pre-commit hooks on pull requests.
 
 ## Usage
 
