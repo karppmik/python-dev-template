@@ -2,21 +2,31 @@ FROM python:3.13-slim
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
-    apt-get -y install --no-install-recommends \
+    apt-get install -y --no-install-recommends \
         curl \
         git \
-        build-essential && \
-    rm -rf /var/lib/apt/lists/* 
+        build-essential \
+        docker.io \
+        gnupg \
+        ca-certificates \
+        libssl-dev \
+        pkg-config && \
+    rm -rf /var/lib/apt/lists/*
 
-RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir hatch
+RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
+ENV PATH="/root/.cargo/bin:$PATH"
 
-COPY pyproject.toml ./ 
+RUN curl -LsSf https://astral.sh/uv/install.sh | sh
+ENV PATH="/root/.local/bin:$PATH"
 
-RUN hatch env create && hatch env run pip install -e .
+COPY pyproject.toml README.md ./
 
-COPY src/{{cookiecutter.package_name}} /{{cookiecutter.package_name}}
+COPY src/{{cookiecutter.package_name}} /src/{{cookiecutter.package_name}}
 
-ENV PYTHONPATH="/workspaces/{{cookiecutter.package_name}}/src"
+WORKDIR /src
+
+RUN uv pip install . --system
+
+ENV PYTHONPATH="/src"
 
 ENTRYPOINT ["python3"]
