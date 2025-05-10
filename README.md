@@ -2,12 +2,11 @@
 
 A Cookiecutter-based template for Python application development. It has been designed to serve as a foundation for DevOps workflows and to streamline development process.
 
-## Main features
+## Main Features
 
 - __Automated Project Setup__: Configures ready-to-use workspace with essential tools and dependencies.
 - __Clear Project Structure__: Provides a clearly structured, readable layout that encourages modularity and simplifies CI processes.
 - __VSCode .devcontainer__: Preconfigured for development in isolated containers.
-- __Hatch__: Modern build and package management.
 - __UV__: Virtual environment management.
 - __Pre-commit Hooks with Ruff__: Automated checks to enforce code quality standards.
 - __Tox for Testing__: Automated environment creation and test execution across multiple configurations.
