@@ -21,14 +21,14 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install Hatch
-        run: pip install hatch
+      - name: Install UV
+        run: pip install uv
 
       - name: Run Tox Tests
-        run: hatch run tox
+        run: uv run tox
 
       - name: Build Wheel Package
-        run: hatch build
+        run: uv build
           
 
       # Optionally Publish to PyPI (Commented by Default)
