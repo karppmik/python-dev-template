@@ -1,4 +1,4 @@
-name: Build and Publish Poetry Package
+name: Package Build
 
 on:
   push:
@@ -21,19 +21,14 @@ jobs:
         with:
           python-version: '3.11'
 
-      - name: Install Poetry
-        run: |
-          curl -sSL https://install.python-poetry.org | python3 -
-          echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+      - name: Install Hatch
+        run: pip install hatch
 
       - name: Run Tox Tests
-        run: |
-          poetry run tox
+        run: hatch run tox
 
-      - name: Install Dependencies and Build Wheel Package
-        run: |
-          poetry install --no-root
-          poetry build --format wheel
+      - name: Build Wheel Package
+        run: hatch build
           
 
       # Optionally Publish to PyPI (Commented by Default)

@@ -9,12 +9,11 @@ RUN apt-get update -y && \
     rm -rf /var/lib/apt/lists/* 
 
 RUN pip install --no-cache-dir --upgrade pip && \
-    pip install --no-cache-dir poetry
+    pip install --no-cache-dir hatch
 
 COPY pyproject.toml ./ 
 
-RUN poetry config virtualenvs.create false && \
-    poetry install --no-interaction --no-ansi --no-root
+RUN hatch env create
 
 COPY src/{{cookiecutter.package_name}} /{{cookiecutter.package_name}}
 
