@@ -3,6 +3,9 @@ name = "{{cookiecutter.project_name}}"
 version = "{{cookiecutter.version}}"
 description = "{{cookiecutter.description}}"
 authors = ["{{cookiecutter.full_name}} <{{cookiecutter.email}}>"]
+authors = [
+  {name = "Firstname Lastname", email = "name@domain.com"}
+]
 readme = "README.md"
 requires-python = ">=3.11"
 
