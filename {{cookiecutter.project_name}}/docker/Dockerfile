@@ -1,4 +1,4 @@
-FROM python:3.11-slim-buster
+FROM python:3.13-slim
 
 RUN apt-get update -y && \
     apt-get upgrade -y && \
@@ -17,6 +17,6 @@ RUN hatch env create
 
 COPY src/{{cookiecutter.package_name}} /{{cookiecutter.package_name}}
 
-ENV PYTHONPATH "${PYTHONPATH}:/{{cookiecutter.package_name}}"
+ENV PYTHONPATH="/workspaces/{{cookiecutter.package_name}}/src"
 
 ENTRYPOINT ["python3"]
