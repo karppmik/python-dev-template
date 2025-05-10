@@ -12,14 +12,16 @@ build-backend = "hatchling.build"
 
 [tool.uv]
 
-[project.dependencies]
-mypy = "^1.0.0"
-flake8 = "^6.0.0"
-tox = "^4.4.7"
-pytest-cov = "^4.0.0"
-pre-commit = "^3.2.0"
-jupyter = "^1.0.0"
-isort = "^5.12.0"
+[project.optional-dependencies]
+dev = [
+    "mypy==^1.0.0",
+    "flake8==^6.0.0",
+    "tox==^4.4.7",
+    "pytest-cov==^4.0.0",
+    "pre-commit==^3.2.0",
+    "jupyter==^1.0.0",
+    "isort==^5.12.0",
+]
 
 [tool.hatch.build.targets.sdist]
 include = ["src/**", "tests/**", "README.md"]
