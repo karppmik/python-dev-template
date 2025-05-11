@@ -8,25 +8,25 @@ A Cookiecutter-based template for Python application development. It has been de
 - __Clear Project Structure__: Provides a clearly structured, readable layout that encourages modularity and simplifies CI processes.
 - __VSCode .devcontainer__: Preconfigured for development in isolated containers.
 - __UV__: Virtual environment management.
-- __Pre-commit Hooks with Ruff__: Automated checks to enforce code quality standards.
+- __Pre-commit Hooks__: Automated checks to enforce code quality standards.
 - __Tox for Testing__: Automated environment creation and test execution across multiple configurations.
 - __Continuous Integration (CI) Workflows__: CI configurations with GitHub Actions for:
-  - **Docker Build and Push**: Automates the building and pushing of Docker images to a container registry.
-  - **Package Build**: Automates the building and publishing of Python wheels to a package index.
+  - **Docker Build and Push**: Automates the building and pushing of Docker images to a container registry (defaults to Dockerhub).
+  - **Package Build**: Automates the building and publishing of Python wheels to a package index (defaults to PyPI).
 
 ## Usage
 
-Install Cookiecutter from Source:
+If you're planning to use Git or Dockerhub, create repositories for both before you start. With Git, you should start with empty repository.
 
-```bash
-git clone https://github.com/cookiecutter/cookiecutter.git
-cd cookiecutter
-python setup.py install
+Install Cookiecutter:
+
+```
+python3 -m pip install cookiecutter
 ```
 
 Generate a New Project:
 
-```bash
+```
 cookiecutter https://github.com/karppmik/python-dev-template.git
 ```
 
