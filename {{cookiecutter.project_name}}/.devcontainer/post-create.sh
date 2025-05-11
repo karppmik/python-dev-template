@@ -1,4 +1,4 @@
 #!/bin/bash
 
-hatch env create && hatch env run pip install -e .
-hatch run pre-commit install
+uv venv
+uv pip install --link-mode=copy --editable ".[dev]"
