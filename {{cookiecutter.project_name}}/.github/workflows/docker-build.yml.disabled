@@ -18,18 +18,16 @@ jobs:
         with:
           python-version: '3.13'
 
-      - name: Install Poetry
+      - name: Install UV
         run: |
-          curl -sSL https://install.python-poetry.org | python3 -
+          curl -LsSf https://astral.sh/uv/install.sh | sh
           echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
 
       - name: Install Dependencies
-        run: |
-          poetry install --no-root
+        run: uv install
 
       - name: Run Tox Tests
-        run: |
-          poetry run tox
+        run: uv run tox
 
       - name: Set up Docker Buildx
         uses: docker/setup-buildx-action@v2
