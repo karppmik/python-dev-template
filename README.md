@@ -29,6 +29,20 @@ To enable Docker Hub authentication in your workflows, you need to add your Dock
 
 Once these secrets are added, the workflows will be able to authenticate with Docker Hub to push images.
 
+### Setting Up Secrets for Docker Hub
+
+To enable Docker Hub authentication in your workflows, you need to add your Docker Hub credentials as secrets in your GitHub repository:
+
+1. Go to your GitHub repository.
+2. Click on "Settings".
+3. In the "Security" section of the sidebar, click "Secrets and variables" and then "Actions".
+4. Click "New repository secret".
+5. Add the following secrets:
+   - `DOCKER_USERNAME`: Your Docker Hub username.
+   - `DOCKER_PASSWORD`: Your Docker Hub password or access token.
+
+Once these secrets are added, the workflows will be able to authenticate with Docker Hub to push images.
+
 ## Usage
 
 If you're planning to use Git or Dockerhub, create repositories for both before you start. With Git, you should start with empty repository.
