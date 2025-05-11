@@ -3,15 +3,18 @@
     "build": {
         "dockerfile": "Dockerfile"
     },
+    "runArgs": [
+        "--privileged",
+        "-v", "/var/run/docker.sock:/var/run/docker.sock"
+    ],
     "customizations": {
         "vscode": {
             "extensions": [
                 "ms-python.python",
                 "ms-python.vscode-pylance",
                 "ms-toolsai.jupyter",
-                "ms-python.pylint",
                 "ms-python.mypy",
-                "ms-python.black-formatter",
+                "charliermarsh.ruff",
                 "ms-azuretools.vscode-docker",
                 "eamodio.gitlens"
             ],

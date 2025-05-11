@@ -13,19 +13,14 @@ RUN apt-get update -y && \
         pkg-config && \
     rm -rf /var/lib/apt/lists/*
 
-RUN curl https://sh.rustup.rs -sSf | sh -s -- -y
-ENV PATH="/root/.cargo/bin:$PATH"
-
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
 ENV PATH="/root/.local/bin:$PATH"
 
 COPY pyproject.toml README.md ./
 
-COPY src/{{cookiecutter.package_name}} /src/{{cookiecutter.package_name}}
+COPY src /src
 
-WORKDIR /src
-
-RUN uv pip install --link-mode=copy --editable ".[dev]" && uv build
+RUN uv pip install --system --link-mode=copy .
 
 ENV PYTHONPATH="/src"
 

@@ -1,3 +1,4 @@
 #!/bin/bash
 
-uv install
+uv venv
+uv pip install --link-mode=copy --editable ".[dev]"

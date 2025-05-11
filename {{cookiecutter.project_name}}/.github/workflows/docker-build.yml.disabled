@@ -21,10 +21,14 @@ jobs:
       - name: Install UV
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
-          echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
 
-      - name: Install Dependencies
-        run: uv install
+      - name: Create Virtual Environment
+        run: uv venv
+
+      - name: Install Editable Dev Dependencies
+        run: |
+          uv pip install --link-mode=copy --editable ".[dev]"
 
       - name: Run Tox Tests
         run: uv run tox

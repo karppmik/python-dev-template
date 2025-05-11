@@ -7,27 +7,12 @@ A Cookiecutter-based template for Python application development. It has been de
 - __Automated Project Setup__: Configures ready-to-use workspace with essential tools and dependencies.
 - __Clear Project Structure__: Provides a clearly structured, readable layout that encourages modularity and simplifies CI processes.
 - __VSCode .devcontainer__: Preconfigured for development in isolated containers.
-- __UV__: Virtual environment management.
+- __UV__: Virtual environment and dependency management.
 - __Pre-commit Hooks__: Automated checks to enforce code quality standards.
 - __Tox for Testing__: Automated environment creation and test execution across multiple configurations.
 - __Continuous Integration (CI) Workflows__: CI configurations with GitHub Actions for:
   - **Docker Build and Push**: Automates the building and pushing of Docker images to a container registry. This workflow is triggered on pushes to the main branch. To enable this workflow, ensure you have Docker Hub credentials set up as secrets in your GitHub repository.
   - **Package Build**: Automates the building and publishing of Python wheels to a package index. This ensures that your package is correctly built and ready for distribution.
-  - **Pre-commit Checks**: Ensures code quality by running pre-commit hooks on pull requests.
-
-### Setting Up Secrets for Docker Hub
-
-To enable Docker Hub authentication in your workflows, you need to add your Docker Hub credentials as secrets in your GitHub repository:
-
-1. Go to your GitHub repository.
-2. Click on "Settings".
-3. In the "Security" section of the sidebar, click "Secrets and variables" and then "Actions".
-4. Click "New repository secret".
-5. Add the following secrets:
-   - `DOCKER_USERNAME`: Your Docker Hub username.
-   - `DOCKER_PASSWORD`: Your Docker Hub password or access token.
-
-Once these secrets are added, the workflows will be able to authenticate with Docker Hub to push images.
 
 ## Usage
 

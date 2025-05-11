@@ -4,9 +4,6 @@ on:
   push:
     branches:
       - main
-  pull_request:
-    branches:
-      - main
 
 jobs:
   build-package:
@@ -24,7 +21,13 @@ jobs:
       - name: Install UV
         run: |
           curl -LsSf https://astral.sh/uv/install.sh | sh
-          echo "PATH=$HOME/.local/bin:$PATH" >> $GITHUB_ENV
+          echo "$HOME/.local/bin" >> $GITHUB_PATH
+
+      - name: Create Virtual Environment
+        run: uv venv
+
+      - name: Install Project in Dev Mode
+        run: uv pip install --link-mode=copy --editable ".[dev]"
 
       - name: Run Tox Tests
         run: uv run tox
@@ -32,7 +35,6 @@ jobs:
       - name: Build Wheel Package
         run: uv build
           
-
       # Optionally Publish to PyPI (Commented by Default)
       # - name: Publish to PyPI
       #   uses: pypa/gh-action-pypi-publish@v1.8.1
