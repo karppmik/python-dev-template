@@ -1,8 +1,11 @@
-FROM python:3.13-slim
+FROM python:3.13
 
-RUN apt-get update -y && \
-    apt-get upgrade -y && \
+ENV DEBIAN_FRONTEND=noninteractive
+
+RUN apt-get update && \
     apt-get install -y --no-install-recommends \
+        apt-utils \
+        openssh-client \
         curl \
         git \
         build-essential \
@@ -11,8 +14,7 @@ RUN apt-get update -y && \
         ca-certificates \
         libssl-dev \
         pkg-config && \
+    apt-get clean && \
     rm -rf /var/lib/apt/lists/*
 
 RUN curl -LsSf https://astral.sh/uv/install.sh | sh
-
-ENV PYTHONPATH="/workspaces/{{cookiecutter.package_name}}/src"
