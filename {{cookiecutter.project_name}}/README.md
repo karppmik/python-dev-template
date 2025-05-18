@@ -3,27 +3,67 @@
 ## Table of Contents
 
 1. [Introduction](#introduction)
-2. [Getting Started](#getting-started)
+2. [Project Structure](#project-structure)
+3. [Getting Started](#getting-started)
    - [Prerequisites](#prerequisites)
    - [Installation](#installation)
-3. [Initial Setup](#initial-setup)
+4. [Initial Setup](#initial-setup)
    - [Install code command](#install-code-command)
    - [Build and Run the Development Container](#build-and-run-the-development-container)
    - [Git Repository and Pre-commit Hooks](#git-repository-and-pre-commit-hooks)
    - [Add GitHub Secrets for Docker Hub and PyPI](#add-github-secrets-for-docker-hub-and-pypi)
    - [Enabling Github Actions](#enabling-github-actions)
-4. [Development Workflow](#development-workflow)
-5. [Dependency Management with uv and pyproject.toml](#dependency-management-with-uv-and-pyprojecttoml)
-6. [Testing](#testing)
-7. [Docker Integration](#docker-integration)
-8. [Authors](#authors)
-9. [License](#license)
+5. [Development Workflow](#development-workflow)
+6. [Dependency Management with uv and pyproject.toml](#dependency-management-with-uv-and-pyprojecttoml)
+7. [Testing](#testing)
+8. [Docker Integration](#docker-integration)
+9. [Authors](#authors)
+10. [License](#license)
 
 ## Introduction
 
 This documentation outlines the setup, usage and workflow conventions for
 developing within this project template. It assumes some familiarity with
 Docker, Git, Python packaging and VSCode.
+
+## Project Structure
+
+Use the structure below as a starting point. Update it to reflect any changes made to your project's layout.
+
+```text
+{{cookiecutter.project_name}}/
+├── .devcontainer/
+│   ├── devcontainer.json
+│   └── Dockerfile
+├── post-create.sh
+├── .github/
+│   └── workflows/
+│       ├── docker-build.yml.disabled
+│       └── package-build.yml.disabled
+├── docker/
+│   └── Dockerfile
+├── notebooks/
+│   └── example_notebook.ipynb
+├── src/
+│   └── {{cookiecutter.package_name}}/
+│       ├── components/
+│       │   ├── __init__.py
+│       │   └── example_component.py
+│       ├── scripts/
+│       │   ├── __init__.py
+│       │   └── example_script.py
+│       └── __init__.py
+├── tests/
+│   ├── __init__.py
+│   └── test_{{cookiecutter.package_name}}.py
+├── .gitignore
+├── .pre-commit-config.yaml
+├── pyproject.toml
+├── README.md
+├── tox.ini
+```
+
+---
 
 ## Getting Started
 
