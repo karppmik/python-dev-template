@@ -181,18 +181,10 @@ Follow this workflow to ensure clean, modular, and reproducible development:
 8. __Merge to `main`__  
    Merging to `main` triggers automated Docker builds or PyPI releases via GitHub Actions.
 
----
-
 ## Dependency Management with `uv` and `pyproject.toml`
 
 This project uses [`uv`](https://github.com/astral-sh/uv) as the primary dependency resolver.
 All dependencies are declared in `pyproject.toml`. We do not use `requirements.txt`.
-
-- __Install all dependencies__:
-
-  ```bash
-  uv sync
-  ```
 
 - __Add a new dependency__:
 
@@ -212,7 +204,11 @@ All dependencies are declared in `pyproject.toml`. We do not use `requirements.t
   uv remove <package>
   ```
 
----
+- __Sync dependencies (requires uv.lock file)__:
+
+   ```bash
+   uv sync
+   ```
 
 ## Testing
 
@@ -231,8 +227,6 @@ All testing is run using `tox`. CI executes tests on every push to `main`.
   ```
 
 > Ensure tests pass locally before opening a pull request.
-
----
 
 ## Docker Integration
 
@@ -266,3 +260,5 @@ docker run <image-name> -m {{cookiecutter.package_name}}.scripts.example_script
 This project is licensed under the [MIT License](https://opensource.org/licenses/MIT).
 
 The MIT License is a permissive open source license that allows for the free use, modification, and distribution of the code, both in commercial and non-commercial projects. It provides limited liability and disclaims warranties of any kind. Please refer to the [LICENSE](LICENSE) file for the full text of the license.
+
+---

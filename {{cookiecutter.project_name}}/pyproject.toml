@@ -14,15 +14,17 @@ build-backend = "hatchling.build"
 
 [tool.uv]
 
-[project.optional-dependencies]
+[dependency-groups]
 dev = [
-    "mypy>=1.0.0,<2.0.0",
-    "tox>=4.4.7,<5.0.0",
-    "pytest-cov>=4.0.0,<5.0.0",
-    "pre-commit>=3.2.0,<4.0.0",
     "jupyter>=1.0.0,<2.0.0",
-    "ruff>=0.0.262,<1.0.0"
+    "mypy>=1.0.0,<2.0.0",
+    "pre-commit>=3.2.0,<4.0.0",
+    "pytest-cov>=4.0.0,<5.0.0",
+    "ruff>=0.0.262,<1.0.0",
+    "tox>=4.4.7,<5.0.0",
 ]
+
+[project.optional-dependencies]
 
 [tool.ruff]
 line-length = 88
