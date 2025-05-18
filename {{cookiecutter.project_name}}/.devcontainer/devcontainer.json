@@ -16,7 +16,8 @@
                 "ms-python.mypy",
                 "charliermarsh.ruff",
                 "ms-azuretools.vscode-docker",
-                "eamodio.gitlens"
+                "eamodio.gitlens",
+                "saoudrizwan.claude-dev"
             ],
             "settings": {
                 "python.analysis.autoSearchPaths": true,
