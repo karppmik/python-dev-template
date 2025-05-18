@@ -10,8 +10,9 @@ from {{cookiecutter.package_name}}.components.example_component import calculate
 
 
 def main() -> None:
-    """
-    Main function for the script. Generates a random number and computes its
+    """Main function for the script.
+    
+    Generates a random number and computes its
     exponential decay, with behavior modified by command-line arguments.
 
     Returns:

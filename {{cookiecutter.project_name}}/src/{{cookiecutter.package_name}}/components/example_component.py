@@ -1,12 +1,10 @@
-"""
-Example component with a generic mathematical function.
-"""
+"""Example component with a generic mathematical function."""
 
 import math
 
+
 def calculate_exponential_decay(value: float) -> float:
-    """
-    Calculate the exponential decay of a given value.
+    """Calculate the exponential decay of a given value.
 
     Args:
         value (float): The input value.
