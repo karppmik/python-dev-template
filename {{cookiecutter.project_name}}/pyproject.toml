@@ -24,6 +24,35 @@ dev = [
     "ruff>=0.0.262,<1.0.0"
 ]
 
+[tool.ruff]
+line-length = 88
+target-version = "py311"
+
+[tool.ruff.format]
+quote-style = "double"
+indent-style = "space"
+line-ending = "auto"
+
+[tool.ruff.lint]
+# Enable common rule sets
+select = [
+  "E",      # pycodestyle errors
+  "F",      # pyflakes
+  "I",      # isort (import order)
+  "D",      # pydocstyle (docstrings)
+  "UP",     # pyupgrade
+  "B",      # flake8-bugbear
+  "PL",     # pylint rules
+]
+
+# Docstring style (Google/Numpy/etc.)
+[tool.ruff.lint.pydocstyle]
+convention = "google"
+
+[tool.ruff.lint.isort]
+force-single-line = true
+known-first-party = ["{{cookiecutter.project_name}}"]
+
 [tool.hatch.build]
 sources = ["src"]
 
@@ -32,4 +61,3 @@ include = ["src/**", "tests/**", "README.md"]
 
 [tool.hatch.build.targets.wheel]
 include = ["src/**", "tests/**", "README.md"]
-
